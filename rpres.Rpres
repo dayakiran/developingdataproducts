@@ -1,0 +1,71 @@
+Distribution of Sample Means
+========================================================
+author: Daya Kiran Sunkara
+date: May 24, 2015
+
+Summary
+========================================================
+
+This application demonstrates the validity of Central Limit Theorem. Simply stated, this theorem says that for a large enough sample size n, the distribution of the sample mean will approach a normal distribution. This is true for a sample of independent random variables from any population distribution, as long as the population has a finite standard deviation.  
+
+Dataset
+========================================================
+
+For this demonstration, we have made use of the various random distribution functions available in R.
+Following distributions have been studied:
+
+- Normal 
+- Log Normal
+- Exponential
+- Uniform
+
+Sample Plots
+========================================================
+
+```{r echo=FALSE}
+dat<-runif(200)
+xmin = -3
+xmax = 3
+tcol="yellow"      # fill colors
+acol="orangered"   # color for added samples
+tscale=1; 
+xrm<-dat
+xrm[dat>1]<-NA
+xrm[dat<0]<-NA
+
+par(mfrow=c(1,2),mar=c(1,1,1,1),pty="m") 
+x0 = seq(xmin,xmax,length.out=512);
+    y0 = dnorm(x0)
+    y0=y0/sum(y0);
+    plot(x0,y0,type="l",lwd=0,col=NULL,main="Population",xlab="",ylab="Probability",frame=F,cex.lab=tscale, cex.axis=tscale, cex.main=tscale, cex.sub=tscale) 
+    polygon(c(xmin,x0,xmax),c(0,y0,0),col=tcol,border=NA)
+    
+    
+    # plot typical sample
+    hist(xrm, 
+         breaks=seq(xmin,xmax,length.out=50),
+         main="Typical Sample",
+         warn.unused = FALSE,
+         col=tcol,
+         border=tcol,
+         xlab="",
+         cex.lab=tscale,
+         cex.axis=tscale,
+         cex.main=tscale,
+         cex.sub=tscale)
+```
+
+Application Usage
+========================================================
+
+Following parameters can be modified using the side panel
+- Distribution : The type of random distribution used.
+- Sample Size : The number of points in the distribution.
+- No. of repititions: The number of times the distribution needs to be generated.
+
+Users have option to regenerate the sample distribution by clicking on the "Draw new sample" button.
+
+Overview
+========================================================
+
+Central Limit Theorem is one of the fundamental theorems of probability theory. Through this application, we wish to ensure that the visual guide to better understand the phenomena.
