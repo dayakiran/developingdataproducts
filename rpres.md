@@ -19,22 +19,23 @@ Following distributions have been studied:
 - Exponential
 - Uniform
 
+Users can also select the following properties to generate the plot:
+- Sample size
+- No. of repititions.
+
 Sample Plots
 ========================================================
 
 ![plot of chunk unnamed-chunk-1](rpres-figure/unnamed-chunk-1-1.png) 
 
-Application Usage
-========================================================
-
-Following parameters can be modified using the side panel
-- Distribution : The type of random distribution used.
-- Sample Size : The number of points in the distribution.
-- No. of repititions: The number of times the distribution needs to be generated.
-
-Users have option to regenerate the sample distribution by clicking on the "Draw new sample" button.
-
-Overview
+Overview/Credits
 ========================================================
 
 Central Limit Theorem is one of the fundamental theorems of probability theory. Through this application, we wish to ensure that the visual guide to better understand the phenomena.
+
+Application is deployed at: 
+https://dayakiran.shinyapps.io/developingdataproducts
+
+While building this applcation, I went through various examples provided at: 
+https://github.com/rstudio/shiny-examples
+
